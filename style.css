@@ -1,0 +1,244 @@
+:root{
+    --Red: hsl(0, 100%, 68%);
+    --VeryDarkBlue: hsl(230, 29%, 20%);
+    --DarkGrayishBlue: hsl(230, 11%, 40%);
+    --GrayishBlue: hsl(231, 7%, 65%);
+    --LightGrayishBlue: hsl(207, 33%, 95%);
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+
+@font-face {
+    font-family: "barlow-R";
+    src: url(fonts/Barlow-Regular.ttf);
+}
+@font-face {
+    font-family: "barlowcon-B";
+    src: url(fonts/BarlowCondensed-Bold.ttf);
+}
+@font-face {
+    font-family: "barlowcon-R";
+    src: url(fonts/BarlowCondensed-Regular.ttf);
+}
+
+
+body{
+    font-size: 18px;
+    padding: 3rem 9rem;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+main{
+    min-height: 80vh;
+}
+
+a:not(.btn-and-link a),h1{
+    font-family: "barlowcon-B";
+    text-decoration: none;
+    color: var(--VeryDarkBlue);
+}
+
+h1{
+    width: 60%;
+    font-size: 70px;
+    text-transform: uppercase;
+    margin: 5px 0 20px;
+}
+
+a:not(.btn-and-link a):hover{
+    text-decoration: underline;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.burger-icon{
+    display: none;
+}
+
+.background-color{
+    position: absolute;
+        background: var(--LightGrayishBlue);
+        width: 50%;
+        height: 70vh;
+        right: 0;
+        top: 0;
+        z-index: -1;
+        border-bottom-left-radius: 50px;
+}
+
+.container{
+    margin: 1.5rem;
+}
+
+
+li{
+    display: inline-block;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+.pricing{
+    position: relative;
+    margin-right: 30px;
+}
+
+.pricing::after{
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--GrayishBlue);
+    opacity: 0.5;
+}
+
+.login{
+    color: var(--GrayishBlue);
+}
+
+.new{
+    text-transform: uppercase;
+    background: var(--VeryDarkBlue);
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+    font-family: "barlowcon-B";
+    margin-right: 5px;
+}
+
+span:not(.new){
+    letter-spacing: 5px;
+    font-family: "barlowcon-R";
+    text-transform: uppercase;
+    color: var(--GrayishBlue);
+    margin: 5px 0;
+}
+
+p{
+    font-family: "barlow-R";
+    width: 30%;
+    margin: 20px 0 50px;
+    color: var(--GrayishBlue);
+}
+
+.btn-and-link{
+    display: flex;
+    width: 410px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-and-link button{
+    border: none;
+    background-color: var(--Red);
+    padding: 15px 35px;
+    width: fit-content;
+    height: fit-content;
+    text-transform: uppercase;
+    border-radius: 10px;
+    font-family: "barlowcon-B";
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-and-link a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color:var(--GrayishBlue);
+    font-family: "barlow-R";
+    word-spacing: 5px;
+}
+
+.btn-and-link button:hover{
+    opacity: 0.9;
+}
+
+picture img{
+    position: absolute;
+    right: -230px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60%;
+}
+
+.d-flex{
+    display: flex;
+    position: absolute;
+    right: 45px;
+    top: 25px;
+    text-align: left;
+    z-index: 10000;
+    border: 2px solid black;
+    padding: 10px 5px;
+    background: white;
+    flex-direction: column;
+}
+
+@media (max-width:720px){
+    body{
+        padding: 1rem;
+    }
+    picture{
+        position: relative;
+        margin: 30px;
+    }
+    picture img{
+        position: unset;
+        transform: none;
+        width: 89%;
+    }
+    h1{
+        font-size: 40px;
+        width: fit-content;
+        margin-top: 20px;
+    }
+    p{
+        width: fit-content;
+    }
+    .btn-and-link button{
+        font-size: 17px;
+        padding: 15px 7px;
+    }
+    .btn-and-link{
+        width: 100%;
+        flex-direction: column;
+        align-items: baseline;
+        gap: 15px;
+    }
+    .burger-icon{
+        display: block;
+    }
+    ul{
+        display: none;
+    }
+    li{
+        padding: 15px;
+    }
+    .pricing::after{
+        top: 100%;
+        right: 50%;
+    }
+}
+
+@media (min-width:720px) and (max-width:991px){
+    h1{
+        width: 80%;
+    }
+    p{
+        width: 50%;
+    }
+}
